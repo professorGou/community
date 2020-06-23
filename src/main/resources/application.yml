@@ -1,2 +1,9 @@
 server:
   port: 5200
+
+github:
+  client:
+    id: 9c7781539c114fa76a78
+    secret: a12fee4f6ff4a324649074f6ef2fade87c91860e
+  redirect:
+    uri: http://localhost:5200/callback
