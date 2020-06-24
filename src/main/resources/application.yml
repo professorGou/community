@@ -7,3 +7,13 @@ github:
     secret: a12fee4f6ff4a324649074f6ef2fade87c91860e
   redirect:
     uri: http://localhost:5200/callback
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/community?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+  thymeleaf:
+    cache: false
