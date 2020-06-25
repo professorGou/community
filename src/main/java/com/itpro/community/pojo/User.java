@@ -10,16 +10,18 @@ public class User {
     private String token;
     private Long gmtCreate;
     private Long gmtModified;
+    private String avatarUrl;
 
     public User() {
     }
 
-    public User(Integer id, String accountId, String name, String token, Long gmtCreate, Long gmtModified) {
+    public User(Integer id, String accountId, String name, String token, Long gmtCreate, Long gmtModified, String avatarUrl) {
         this.id = id;
         this.accountId = accountId;
         this.name = name;
         this.token = token;
         this.gmtCreate = gmtCreate;
         this.gmtModified = gmtModified;
+        this.avatarUrl = avatarUrl;
     }
 }

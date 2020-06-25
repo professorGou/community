@@ -17,3 +17,10 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
   thymeleaf:
     cache: false
+  devtools:
+    restart:
+      emabled: true
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
