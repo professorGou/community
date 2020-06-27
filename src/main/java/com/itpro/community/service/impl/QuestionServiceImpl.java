@@ -1,5 +1,6 @@
 package com.itpro.community.service.impl;
 
+import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.dto.QuestionDTO;
 import com.itpro.community.mapper.QuestionMapper;
 import com.itpro.community.mapper.UserMapper;
@@ -22,9 +23,20 @@ public class QuestionServiceImpl implements QuestionService {
     UserMapper userMapper;
 
     @Override
-    public List<QuestionDTO> list() {
-        List<Question> questions = questionMapper.list();
-        ArrayList<QuestionDTO> questionDTOList = new ArrayList<>();
+    public PaginationDTO list(Integer page, Integer size) {
+
+        PaginationDTO paginationDTO = new PaginationDTO();
+        Integer totalCount = questionMapper.count();
+        paginationDTO.setPagination(totalCount, page, size);
+        if(page < 1)
+            page = 1;
+        if(page > paginationDTO.getTotalPage())
+            page = paginationDTO.getTotalPage();
+
+        Integer offSet = size * (page - 1);
+        List<Question> questions = questionMapper.list(offSet, size);
+        List<QuestionDTO> questionDTOList = new ArrayList<>();
+
         for (Question question: questions) {
             User user =userMapper.findById(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
@@ -32,6 +44,8 @@ public class QuestionServiceImpl implements QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        return questionDTOList;
+        paginationDTO.setQuestions(questionDTOList);
+
+        return paginationDTO;
     }
 }

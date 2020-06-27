@@ -1,10 +1,8 @@
 package com.itpro.community.service;
 
-import com.itpro.community.dto.QuestionDTO;
-
-import java.util.List;
+import com.itpro.community.dto.PaginationDTO;
 
 public interface QuestionService {
 
-    List<QuestionDTO> list();
+    PaginationDTO list(Integer page, Integer size);
 }

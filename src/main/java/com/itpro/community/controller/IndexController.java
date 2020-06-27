@@ -1,5 +1,6 @@
 package com.itpro.community.controller;
 
+import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.dto.QuestionDTO;
 import com.itpro.community.mapper.QuestionMapper;
 import com.itpro.community.mapper.UserMapper;
@@ -33,7 +34,7 @@ public class IndexController {
     public String index(HttpServletRequest request,
                         Model model,
                         @RequestParam(name = "page", defaultValue = "1") Integer page,
-                        @RequestParam(name = "size", defaultValue = "5") Integer size){
+                        @RequestParam(name = "size", defaultValue = "2") Integer size){
         Cookie[] cookies = request.getCookies();
         //遍历cookie，查找是否有name=token的cookie
         if(cookies != null) {
@@ -50,9 +51,8 @@ public class IndexController {
                 }
             }
         }
-
-        List<QuestionDTO> questionList = questionService.list();
-        model.addAttribute("questions", questionList);
+        PaginationDTO pagination = questionService.list(page, size);
+        model.addAttribute("pagination", pagination);
         return "index";
     }
 }
