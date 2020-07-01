@@ -1,7 +1,6 @@
 package com.itpro.community.controller;
 
 import com.itpro.community.mapper.QuestionMapper;
-import com.itpro.community.mapper.UserMapper;
 import com.itpro.community.pojo.Question;
 import com.itpro.community.pojo.User;
 import org.apache.commons.lang3.StringUtils;
@@ -19,8 +18,6 @@ public class PublishController {
 
     @Autowired
     QuestionMapper questionMapper;
-    @Autowired
-    UserMapper userMapper;
 
     @GetMapping("/publish")
     public String publish(){

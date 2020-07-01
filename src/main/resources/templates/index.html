@@ -6,7 +6,7 @@
     <script src="/dist/js/jquery-3.4.1.min.js"></script>
     <script src="/dist/js/bootstrap.min.js"></script>
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/dist/css/commmunity.css" rel="stylesheet">
+    <link href="/dist/css/community.css" rel="stylesheet">
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
@@ -23,7 +23,8 @@
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">
-                        <a th:text="${question.title}"></a>
+                        <a th:href="@{'/question/'+ ${question.id}}" th:text="${question.title}">
+                        </a>
                     </h4>
                     <span class="text-desc"><span th:text="${question.commentCount}"></span> 个回复 • <span
                             th:text="${question.viewCount}"></span> 次浏览 • <span

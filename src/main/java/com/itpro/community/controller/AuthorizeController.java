@@ -5,6 +5,7 @@ import com.itpro.community.dto.GithubUser;
 import com.itpro.community.mapper.UserMapper;
 import com.itpro.community.pojo.User;
 import com.itpro.community.provider.GithubProvider;
+import com.itpro.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.UUID;
@@ -22,7 +24,7 @@ public class AuthorizeController {
     @Autowired
     GithubProvider githubProvider;
     @Autowired
-    UserMapper userMapper;
+    UserService userService;
     @Value("${github.client.id}")
     String clientId;
     @Value("${github.client.secret}")
@@ -64,12 +66,22 @@ public class AuthorizeController {
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
             user.setAvatarUrl(githubUser.getAvatarUrl());
-            userMapper.insert(user);
+            userService.createOrUpdate(user);
 
             response.addCookie(new Cookie("token", token));
             return "redirect:/";
         }else{
             return "redirect:/";
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request,
+                         HttpServletResponse response){
+        request.getSession().removeAttribute("user");
+        Cookie cookie = new Cookie("token", null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
     }
 }
