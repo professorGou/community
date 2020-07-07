@@ -2,6 +2,7 @@ package com.itpro.community.service;
 
 import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.dto.QuestionDTO;
+import com.itpro.community.pojo.Question;
 
 public interface QuestionService {
 
@@ -11,4 +12,5 @@ public interface QuestionService {
 
     QuestionDTO getById(Integer id);
 
+    void createOrUpdate(Question question);
 }

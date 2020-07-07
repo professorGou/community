@@ -2,7 +2,6 @@ package com.itpro.community.controller;
 
 import com.itpro.community.dto.AccessTokenDTO;
 import com.itpro.community.dto.GithubUser;
-import com.itpro.community.mapper.UserMapper;
 import com.itpro.community.pojo.User;
 import com.itpro.community.provider.GithubProvider;
 import com.itpro.community.service.UserService;
@@ -25,6 +24,7 @@ public class AuthorizeController {
     GithubProvider githubProvider;
     @Autowired
     UserService userService;
+
     @Value("${github.client.id}")
     String clientId;
     @Value("${github.client.secret}")

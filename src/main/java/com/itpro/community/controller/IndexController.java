@@ -1,7 +1,6 @@
 package com.itpro.community.controller;
 
 import com.itpro.community.dto.PaginationDTO;
-import com.itpro.community.mapper.UserMapper;
 import com.itpro.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class IndexController {
 
-    @Autowired
-    UserMapper userMapper;
     @Autowired
     QuestionService questionService;
 
