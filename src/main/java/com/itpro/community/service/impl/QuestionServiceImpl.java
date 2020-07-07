@@ -2,6 +2,8 @@ package com.itpro.community.service.impl;
 
 import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.dto.QuestionDTO;
+import com.itpro.community.exception.CustomizeErrorCode;
+import com.itpro.community.exception.CustomizeException;
 import com.itpro.community.mapper.QuestionMapper;
 import com.itpro.community.mapper.UserMapper;
 import com.itpro.community.pojo.Question;
@@ -110,6 +112,9 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public QuestionDTO getById(Integer id) {
         Question question = questionMapper.selectByPrimaryKey(id);
+        if(question == null){
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
         QuestionDTO questionDTO = new QuestionDTO();
         BeanUtils.copyProperties(question, questionDTO);
         User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -134,7 +139,10 @@ public class QuestionServiceImpl implements QuestionService {
             QuestionExample example = new QuestionExample();
             example.createCriteria()
                     .andIdEqualTo(question.getId());
-            questionMapper.updateByExampleSelective(updateQuestion, example);
+            int updated = questionMapper.updateByExampleSelective(updateQuestion, example);
+            if(updated != 1){
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
         }
     }
 
