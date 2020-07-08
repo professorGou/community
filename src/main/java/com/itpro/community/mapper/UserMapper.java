@@ -25,5 +25,4 @@ public interface UserMapper {
     int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
     User selectByPrimaryKey(Integer creator);
-
 }

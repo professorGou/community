@@ -4,6 +4,7 @@ import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.dto.QuestionDTO;
 import com.itpro.community.exception.CustomizeErrorCode;
 import com.itpro.community.exception.CustomizeException;
+import com.itpro.community.mapper.QuestionExtMapper;
 import com.itpro.community.mapper.QuestionMapper;
 import com.itpro.community.mapper.UserMapper;
 import com.itpro.community.pojo.Question;
@@ -27,6 +28,8 @@ public class QuestionServiceImpl implements QuestionService {
     QuestionMapper questionMapper;
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    QuestionExtMapper questionExtMapper;
 
     @Override
     public PaginationDTO list(Integer page, Integer size) {
@@ -128,7 +131,7 @@ public class QuestionServiceImpl implements QuestionService {
             //创建
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
-            questionMapper.insert(question);
+            questionMapper.insertSelective(question);
         }else {
             //更新
             Question updateQuestion = new Question();
@@ -144,6 +147,14 @@ public class QuestionServiceImpl implements QuestionService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+    }
+
+    @Override
+    public void incView(Integer id) {
+        Question updateQuestion = new Question();
+        updateQuestion.setId(id);
+        updateQuestion.setViewCount(1);
+        questionExtMapper.incView(updateQuestion);
     }
 
 

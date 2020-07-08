@@ -111,7 +111,7 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
+    select
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -252,15 +252,15 @@
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update question
     set id = #{record.id,jdbcType=INTEGER},
-      title = #{record.title,jdbcType=VARCHAR},
-      gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
-      gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
-      creator = #{record.creator,jdbcType=INTEGER},
-      comment_count = #{record.commentCount,jdbcType=INTEGER},
-      view_count = #{record.viewCount,jdbcType=INTEGER},
-      like_count = #{record.likeCount,jdbcType=INTEGER},
-      tag = #{record.tag,jdbcType=VARCHAR},
-      description = #{record.description,jdbcType=LONGVARCHAR}
+    title = #{record.title,jdbcType=VARCHAR},
+    gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
+    gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
+    creator = #{record.creator,jdbcType=INTEGER},
+    comment_count = #{record.commentCount,jdbcType=INTEGER},
+    view_count = #{record.viewCount,jdbcType=INTEGER},
+    like_count = #{record.likeCount,jdbcType=INTEGER},
+    tag = #{record.tag,jdbcType=VARCHAR},
+    description = #{record.description,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -268,14 +268,14 @@
   <update id="updateByExample" parameterType="map">
     update question
     set id = #{record.id,jdbcType=INTEGER},
-      title = #{record.title,jdbcType=VARCHAR},
-      gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
-      gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
-      creator = #{record.creator,jdbcType=INTEGER},
-      comment_count = #{record.commentCount,jdbcType=INTEGER},
-      view_count = #{record.viewCount,jdbcType=INTEGER},
-      like_count = #{record.likeCount,jdbcType=INTEGER},
-      tag = #{record.tag,jdbcType=VARCHAR}
+    title = #{record.title,jdbcType=VARCHAR},
+    gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
+    gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
+    creator = #{record.creator,jdbcType=INTEGER},
+    comment_count = #{record.commentCount,jdbcType=INTEGER},
+    view_count = #{record.viewCount,jdbcType=INTEGER},
+    like_count = #{record.likeCount,jdbcType=INTEGER},
+    tag = #{record.tag,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

@@ -104,11 +104,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.itpro.community.pojo.User">
-    insert into user (id, account_id, name, 
-      token, gmt_create, gmt_modified, 
+    insert into user (id, account_id, name,
+      token, gmt_create, gmt_modified,
       bio, avatar_url)
-    values (#{id,jdbcType=INTEGER}, #{accountId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{token,jdbcType=CHAR}, #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=INTEGER}, #{accountId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+      #{token,jdbcType=CHAR}, #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT},
       #{bio,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.itpro.community.pojo.User">
@@ -207,13 +207,13 @@
   <update id="updateByExample" parameterType="map">
     update user
     set id = #{record.id,jdbcType=INTEGER},
-      account_id = #{record.accountId,jdbcType=VARCHAR},
-      name = #{record.name,jdbcType=VARCHAR},
-      token = #{record.token,jdbcType=CHAR},
-      gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
-      gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
-      bio = #{record.bio,jdbcType=VARCHAR},
-      avatar_url = #{record.avatarUrl,jdbcType=VARCHAR}
+    account_id = #{record.accountId,jdbcType=VARCHAR},
+    name = #{record.name,jdbcType=VARCHAR},
+    token = #{record.token,jdbcType=CHAR},
+    gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
+    gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
+    bio = #{record.bio,jdbcType=VARCHAR},
+    avatar_url = #{record.avatarUrl,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

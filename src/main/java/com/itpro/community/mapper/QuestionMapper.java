@@ -2,10 +2,9 @@ package com.itpro.community.mapper;
 
 import com.itpro.community.pojo.Question;
 import com.itpro.community.pojo.QuestionExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
-
-import java.util.List;
 
 public interface QuestionMapper {
     long countByExample(QuestionExample example);
