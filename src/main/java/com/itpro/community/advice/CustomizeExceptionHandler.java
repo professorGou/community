@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.itpro.community.dto.ResultDTO;
 import com.itpro.community.exception.CustomizeErrorCode;
 import com.itpro.community.exception.CustomizeException;
-import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -25,7 +24,7 @@ public class CustomizeExceptionHandler{
     @ExceptionHandler(Exception.class)
     ModelAndView handle(HttpServletRequest request, HttpServletResponse response, Throwable e, Model model){
         String contentType = request.getContentType();
-        if("application/json".equals(contentType)){
+        if("application/json;charset=UTF-8".equals(contentType)){
             ResultDTO resultDTO;
             // 返回 JSON
             if (e instanceof CustomizeException) {
@@ -35,7 +34,7 @@ public class CustomizeExceptionHandler{
                 resultDTO = ResultDTO.errorOf(CustomizeErrorCode.SYS_ERROR);
             }
             try {
-                response.setContentType("application/json");
+                response.setContentType("application/json;charset=UTF-8");
                 response.setStatus(200);
                 response.setCharacterEncoding("utf-8");
                 PrintWriter writer = response.getWriter();
@@ -56,13 +55,5 @@ public class CustomizeExceptionHandler{
 
 
 
-    }
-
-    private HttpStatus getStatus(HttpServletRequest request) {
-        Integer statusCode  = (Integer)request.getAttribute("javax.servlet.error.status.code");
-        if(statusCode == null){
-            return HttpStatus.INTERNAL_SERVER_ERROR;
-        }
-        return HttpStatus.valueOf(statusCode);
     }
 }

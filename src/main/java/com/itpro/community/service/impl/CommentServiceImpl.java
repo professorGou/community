@@ -11,6 +11,7 @@ import com.itpro.community.pojo.Question;
 import com.itpro.community.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CommentServiceImpl implements CommentService {
@@ -26,6 +27,7 @@ public class CommentServiceImpl implements CommentService {
      * 发送评论/回复
      * @param comment
      */
+    @Transactional
     @Override
     public void insertSelective(Comment comment) {
         //若评论的父类id为空or==0,无法评论，抛异常
