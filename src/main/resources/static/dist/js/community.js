@@ -1,6 +1,10 @@
 function post() {
     let questionId = $("#question_id").val();
     let content = $("#comment_content").val();
+    if (!content) {
+        alert("不能回复空内容~~~");
+        return;
+    }
     let str = {"parentId": questionId, "content": content, "type": 1};
     $.post({
         url: "/comment",
@@ -9,7 +13,7 @@ function post() {
         dataType: "json",
         success: function (data) {
             if(data.code == 200){
-                $("#comment_section").hide();
+                window.location.reload();
             }else {
                 if(data.code == 2003){
                     var isAccepted = confirm(data.message);
