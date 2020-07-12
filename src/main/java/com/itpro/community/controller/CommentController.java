@@ -1,7 +1,9 @@
 package com.itpro.community.controller;
 
 import com.itpro.community.dto.CommentCreateDTO;
+import com.itpro.community.dto.CommentDTO;
 import com.itpro.community.dto.ResultDTO;
+import com.itpro.community.enums.CommentTypeEnum;
 import com.itpro.community.exception.CustomizeErrorCode;
 import com.itpro.community.pojo.Comment;
 import com.itpro.community.pojo.User;
@@ -9,11 +11,10 @@ import com.itpro.community.service.CommentService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class CommentController {
@@ -48,5 +49,17 @@ public class CommentController {
         commentService.insertSelective(comment);
 
         return ResultDTO.okOf();
+    }
+
+    /**
+     * 获取某个评论的二级评论
+     * @param id
+     * @return
+     */
+    @ResponseBody
+    @GetMapping("/comment/{id}")
+    public ResultDTO<List<CommentDTO>> comments(@PathVariable("id")Integer id){
+        List<CommentDTO> commentDTOS = commentService.listByTargetId(id, CommentTypeEnum.COMMENT);
+        return ResultDTO.okOf(commentDTOS);
     }
 }

@@ -4,6 +4,8 @@ import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.dto.QuestionDTO;
 import com.itpro.community.pojo.Question;
 
+import java.util.List;
+
 public interface QuestionService {
 
     PaginationDTO list(Integer page, Integer size);
@@ -15,4 +17,6 @@ public interface QuestionService {
     void createOrUpdate(Question question);
 
     void incView(Integer id);
+
+    List<QuestionDTO> selectRelate(QuestionDTO questionDTO);
 }

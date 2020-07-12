@@ -4,10 +4,7 @@ import com.itpro.community.dto.CommentDTO;
 import com.itpro.community.enums.CommentTypeEnum;
 import com.itpro.community.exception.CustomizeErrorCode;
 import com.itpro.community.exception.CustomizeException;
-import com.itpro.community.mapper.CommentMapper;
-import com.itpro.community.mapper.QuestionExtMapper;
-import com.itpro.community.mapper.QuestionMapper;
-import com.itpro.community.mapper.UserMapper;
+import com.itpro.community.mapper.*;
 import com.itpro.community.pojo.*;
 import com.itpro.community.service.CommentService;
 import org.springframework.beans.BeanUtils;
@@ -32,6 +29,9 @@ public class CommentServiceImpl implements CommentService {
     QuestionExtMapper questionExtMapper;
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    private CommentExtMapper commentExtMapper;
+
     /**
      * 发送评论/回复
      * @param comment
@@ -56,6 +56,13 @@ public class CommentServiceImpl implements CommentService {
             }
             //存在则直接插入
             commentMapper.insertSelective(comment);
+
+            // 增加评论数
+            /*Comment parentComment = new Comment();
+            parentComment.setId(comment.getParentId());
+            parentComment.setCommentCount(1);*/
+            dbComment.setCommentCount(1);
+            commentExtMapper.incCommentCount(dbComment);
         }else{  //类型是问题，评论问题
             //判断问题是否存在，此处的comment.parentId == question.id
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
@@ -71,17 +78,18 @@ public class CommentServiceImpl implements CommentService {
     }
 
     /**
-     * 根据对应问题的id，查出该问题的所有评论
+     * 根据对应的id，查出该问题/评论的所有回复
      * @param id    questionId == parentId
+     * @param type
      * @return
      */
     @Override
-    public List<CommentDTO> listByQuestionId(Integer id) {
+    public List<CommentDTO> listByTargetId(Integer id, CommentTypeEnum type) {
         CommentExample commentExample = new CommentExample();
-        //根据parentId和type，查出所有一级评论
+        //根据parentId和type，查出所有评论
         commentExample.createCriteria()
                 .andParentIdEqualTo(id)
-                .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
+                .andTypeEqualTo(type.getType());
         commentExample.setOrderByClause("gmt_create desc");
         List<Comment> comments = commentMapper.selectByExample(commentExample);
 

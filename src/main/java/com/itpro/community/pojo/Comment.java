@@ -90,4 +90,19 @@ public class Comment {
     public void setCommentCount(Integer commentCount) {
         this.commentCount = commentCount;
     }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", parentId=" + parentId +
+                ", type=" + type +
+                ", commentator=" + commentator +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                ", likeCount=" + likeCount +
+                ", content='" + content + '\'' +
+                ", commentCount=" + commentCount +
+                '}';
+    }
 }
