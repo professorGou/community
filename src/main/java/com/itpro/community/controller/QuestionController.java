@@ -21,6 +21,12 @@ public class QuestionController {
     @Autowired
     CommentService commentService;
 
+    /**
+     * 返回问题详细页面
+     * @param id    问题id
+     * @param model
+     * @return
+     */
     @GetMapping("/question/{id}")
     public String question(@PathVariable("id") Integer id, Model model){
         QuestionDTO questionDTO = questionService.getById(id);

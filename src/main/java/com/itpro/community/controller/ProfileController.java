@@ -2,6 +2,7 @@ package com.itpro.community.controller;
 
 import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.pojo.User;
+import com.itpro.community.service.NotificationService;
 import com.itpro.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,8 @@ public class ProfileController {
 
     @Autowired
     QuestionService questionService;
-
+    @Autowired
+    NotificationService notificationService;
     @GetMapping("/profile/{action}")
     public String profile(@PathVariable("action")String action,
                           Model model,
@@ -29,14 +31,20 @@ public class ProfileController {
             return "redirect:/";
         }
         if("questions".equals(action)){
+            PaginationDTO paginationDTO = questionService.list(user.getId(), page, size);
+
             model.addAttribute("section", "questions");
             model.addAttribute("sectionName", "我的提问");
+            model.addAttribute("pagination", paginationDTO);
         }else if("replies".equals(action)){
+            PaginationDTO paginationDTO = notificationService.list(user.getId(), page, size);
+            Long unreadCount = notificationService.unreadCount(user.getId());
+
             model.addAttribute("section", "replies");
             model.addAttribute("sectionName", "最新回复");
+            model.addAttribute("pagination", paginationDTO);
         }
-        PaginationDTO paginationDTO = questionService.list(user.getId(), page, size);
-        model.addAttribute("pagination", paginationDTO);
+
         return "profile";
     }
 }

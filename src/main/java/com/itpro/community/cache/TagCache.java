@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 定义了几种类型的标签
+ */
 public class TagCache {
     public static List<TagDTO> get(){
         ArrayList<TagDTO> tagDTOS = new ArrayList<>();
@@ -40,6 +43,11 @@ public class TagCache {
         return tagDTOS;
     }
 
+    /**
+     * 判断传入的tags是否属于以上定义的类型
+     * @param tags  传入的tags字符串(可能包含多个类型)
+     * @return      返回 传入的字符串中的标签 不属于tagList的 标签(可能包含多个)
+     */
     public static String filterInvalid(String tags) {
         String[] split = StringUtils.split(tags, ",");
         List<TagDTO> tagDTOS = get();

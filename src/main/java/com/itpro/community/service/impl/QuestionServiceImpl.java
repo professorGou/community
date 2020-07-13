@@ -34,6 +34,12 @@ public class QuestionServiceImpl implements QuestionService {
     @Autowired
     QuestionExtMapper questionExtMapper;
 
+    /**
+     * 查询所有问题，分页展示
+     * @param page
+     * @param size
+     * @return
+     */
     @Override
     public PaginationDTO list(Integer page, Integer size) {
 
@@ -68,11 +74,18 @@ public class QuestionServiceImpl implements QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        paginationDTO.setQuestions(questionDTOList);
+        paginationDTO.setData(questionDTOList);
 
         return paginationDTO;
     }
 
+    /**
+     * 查询某个用户的所有问题，分页展示
+     * @param userId
+     * @param page
+     * @param size
+     * @return
+     */
     @Override
     public PaginationDTO list(Integer userId, Integer page, Integer size) {
         PaginationDTO paginationDTO = new PaginationDTO();
@@ -112,11 +125,16 @@ public class QuestionServiceImpl implements QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        paginationDTO.setQuestions(questionDTOList);
+        paginationDTO.setData(questionDTOList);
 
         return paginationDTO;
     }
 
+    /**
+     * 根据id获取某条问题及发布者信息
+     * @param id
+     * @return
+     */
     @Override
     public QuestionDTO getById(Integer id) {
         Question question = questionMapper.selectByPrimaryKey(id);
@@ -130,6 +148,10 @@ public class QuestionServiceImpl implements QuestionService {
         return questionDTO;
     }
 
+    /**
+     * 创建/修改问题(判断question.id是否为空)
+     * @param question
+     */
     @Override
     public void createOrUpdate(Question question) {
         if(question.getId() == null){
@@ -154,6 +176,10 @@ public class QuestionServiceImpl implements QuestionService {
         }
     }
 
+    /**
+     * 增加问题阅读数
+     * @param id
+     */
     @Override
     public void incView(Integer id) {
         Question updateQuestion = new Question();
@@ -162,13 +188,19 @@ public class QuestionServiceImpl implements QuestionService {
         questionExtMapper.incView(updateQuestion);
     }
 
+    /**
+     *
+     * @param queryDTO
+     * @return
+     */
     @Override
     public List<QuestionDTO> selectRelate(QuestionDTO queryDTO) {
         if(StringUtils.isBlank(queryDTO.getTag())){
             return new ArrayList<>();
         }
+        //将tags分解成多个单独标签，放入数组中
         String[] tags = StringUtils.split(queryDTO.getTag(), ",");
-        //转成正则表达式格式
+        //将tags转成正则表达式格式，用于sql语句判断是否符合条件
         String regexTag = Arrays.stream(tags).collect(Collectors.joining("|"));
         Question question = new Question();
         question.setId(queryDTO.getId());

@@ -107,3 +107,9 @@ body{
 .menu .icon:hover{
     color: #499ef3;
 }
+.unread{
+    background-color: indianred
+}
+.unreadCount{
+    background-color: indianred
+}

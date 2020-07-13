@@ -1,5 +1,9 @@
 package com.itpro.community.enums;
 
+/**
+ * 评论枚举类：
+ * 用于判断插入的回复 是问题/评论
+ */
 public enum CommentTypeEnum {
     QUESTION(1),
     COMMENT(2);

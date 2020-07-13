@@ -74,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, title, gmt_create, gmt_modified, creator, comment_count, view_count, like_count, 
+    id, title, gmt_create, gmt_modified, creator, comment_count, view_count, like_count,
     tag
   </sql>
   <sql id="Blob_Column_List">
@@ -129,13 +129,13 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.itpro.community.pojo.Question">
-    insert into question (id, title, gmt_create, 
-      gmt_modified, creator, comment_count, 
-      view_count, like_count, tag, 
+    insert into question (id, title, gmt_create,
+      gmt_modified, creator, comment_count,
+      view_count, like_count, tag,
       description)
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=BIGINT}, 
-      #{gmtModified,jdbcType=BIGINT}, #{creator,jdbcType=INTEGER}, #{commentCount,jdbcType=INTEGER}, 
-      #{viewCount,jdbcType=INTEGER}, #{likeCount,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=BIGINT},
+      #{gmtModified,jdbcType=BIGINT}, #{creator,jdbcType=INTEGER}, #{commentCount,jdbcType=INTEGER},
+      #{viewCount,jdbcType=INTEGER}, #{likeCount,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR},
       #{description,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.itpro.community.pojo.Question">

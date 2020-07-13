@@ -2,10 +2,9 @@ package com.itpro.community.mapper;
 
 import com.itpro.community.pojo.Comment;
 import com.itpro.community.pojo.CommentExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
-
-import java.util.List;
 
 public interface CommentMapper {
     long countByExample(CommentExample example);

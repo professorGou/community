@@ -22,6 +22,12 @@ public class PublishController {
     @Autowired
     QuestionService questionService;
 
+    /**
+     *编辑问题，查出该提问的内容，用于回显
+     * @param id    问题id
+     * @param model
+     * @return
+     */
     @GetMapping("/publish/{id}")
     public String edit(@PathVariable(name = "id") Integer id,
                        Model model) {
@@ -34,12 +40,27 @@ public class PublishController {
         return "publish";
     }
 
+    /**
+     * 跳转至提问页面
+     * @param model
+     * @return
+     */
     @GetMapping("/publish")
     public String publish(Model model){
         model.addAttribute("tags", TagCache.get());
         return "publish";
     }
 
+    /**
+     * 提问
+     * @param title         问题标题
+     * @param description   问题描述
+     * @param tag           问题标签
+     * @param id            问题id
+     * @param session
+     * @param model
+     * @return
+     */
     @PostMapping("/publish")
     public String doPublish(@RequestParam(value = "title", required = false) String title,
                             @RequestParam(value = "description", required = false) String description,

@@ -9,9 +9,9 @@ import java.util.List;
  * 分页功能的传输类
  */
 @Data
-public class PaginationDTO {
+public class PaginationDTO<T> {
 
-    private List<QuestionDTO> questions;            //封装所有问题的信息
+    private List<T> data;            //封装所有问题的信息
     private boolean showPrevious;                   //是否有前一页标签
     private boolean showFirstPage;                  //是否有第一页标签
     private boolean showNext;                       //是否有下一页标签

@@ -15,6 +15,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
+    /**
+     * 创建/修改用户
+     * 判断数据库中是否包含对应的user： 若包含则修改user.token， 否则创建一个user
+     * @param user
+     */
     @Override
     public void createOrUpdate(User user) {
         UserExample userExample = new UserExample();
