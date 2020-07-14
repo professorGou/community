@@ -8,6 +8,8 @@
     <script src="/dist/js/community.js"></script>
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/dist/css/community.css" rel="stylesheet">
+    <link href="/dist/css/editormd.min.css" rel="stylesheet">
+    <script src="/dist/js/editormd.min.js" type="application/javascript"></script>
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
@@ -24,11 +26,27 @@
                     <input type="text" class="form-control" th:value="${title}" id="title" name="title"
                            placeholder="问题标题" autocomplete="off"/>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="question-editor">
                     <label for="title">问题补充（必填，请参照右侧提示）:</label>
                     <textarea class="form-control" id="description" th:text="${description}" name="description"
-                              cols="30" rows="10" autocomplete="off"></textarea>
+                              cols="30" rows="10" autocomplete="off"
+                              style="display: none"></textarea>
                 </div>
+                <script type="text/javascript">
+                    $(function () {
+                        var editor = editormd("question-editor", {
+                            width: "100%",
+                            height: 350,
+                            path: "/dist/js/lib/",
+                            delay: 0,
+                            watch: false,
+                            placeholder: "请输入问题描述",
+                            imageUpload: true,
+                            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                            imageUploadURL: "/file/upload",
+                        });
+                    });
+                </script>
                 <div class="form-group">
                     <label for="tag">添加标签：</label>
                     <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
@@ -83,6 +101,6 @@
         </div>
     </div>
 </div>
-
+<div th:insert="~{footer :: foot}"></div>
 </body>
 </html>

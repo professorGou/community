@@ -40,7 +40,7 @@
         order by gmt_create desc limit 20
     </select>
 
-<!--    <select id="countBySearch" parameterType="com.itpro.community.dto.QuestionQueryDTO"
+    <select id="countBySearch" parameterType="com.itpro.community.dto.QuestionQueryDTO"
             resultType="java.lang.Integer">
         select count(*) from QUESTION
         <where>
@@ -59,7 +59,7 @@
         </where>
     </select>
 
-    <select id="selectBySearch" parameterType="life.majiang.community.dto.QuestionQueryDTO"
+    <select id="selectBySearch" parameterType="com.itpro.community.dto.QuestionQueryDTO"
             resultMap="BaseResultMap">
         select * from QUESTION
         <where>
@@ -89,5 +89,5 @@
             order by comment_count desc
         </if>
         limit #{page},#{size}
-    </select>-->
+    </select>
 </mapper>

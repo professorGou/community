@@ -113,3 +113,7 @@ body{
 .unreadCount{
     background-color: indianred
 }
+.footer{
+    padding: 10px 25%;
+    color: #666;
+}

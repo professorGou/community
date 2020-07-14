@@ -1,6 +1,7 @@
 package com.itpro.community.mapper;
 
 
+import com.itpro.community.dto.QuestionQueryDTO;
 import com.itpro.community.pojo.Question;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public interface QuestionExtMapper {
 
     List<Question> selectRelated(Question question);
 
-/*    Integer countBySearch(QuestionQueryDTO questionQueryDTO);
+    Integer countBySearch(QuestionQueryDTO questionQueryDTO);
 
-    List<Question> selectBySearch(QuestionQueryDTO questionQueryDTO);*/
+    List<Question> selectBySearch(QuestionQueryDTO questionQueryDTO);
 }

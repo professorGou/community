@@ -2,6 +2,7 @@ package com.itpro.community.service.impl;
 
 import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.dto.QuestionDTO;
+import com.itpro.community.dto.QuestionQueryDTO;
 import com.itpro.community.exception.CustomizeErrorCode;
 import com.itpro.community.exception.CustomizeException;
 import com.itpro.community.mapper.QuestionExtMapper;
@@ -41,13 +42,23 @@ public class QuestionServiceImpl implements QuestionService {
      * @return
      */
     @Override
-    public PaginationDTO list(Integer page, Integer size) {
+    public PaginationDTO list(String search, Integer page, Integer size) {
+        if(StringUtils.isNotBlank(search)){
+            //将tags分解成多个单独标签，放入数组中
+            String[] tags = StringUtils.split(search, " ");
+            //将tags转成正则表达式格式，用于sql语句判断是否符合条件
+            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+        }
+
+
 
         PaginationDTO paginationDTO = new PaginationDTO();
         //获得问题总数
         Integer totalPage;
         //获得问题总数
-        Integer totalCount = (int)questionMapper.countByExample(new QuestionExample());
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setSearch(search);
+        Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
 
         if(totalCount % size == 0)
             totalPage = totalCount / size;
@@ -64,7 +75,9 @@ public class QuestionServiceImpl implements QuestionService {
         Integer offSet = size * (page - 1);
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offSet, size));
+        questionQueryDTO.setSize(size);
+        questionQueryDTO.setPage(offSet);
+        List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
         //将查询出的问题数据，封装到questionDTO集合中
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         for (Question question: questions) {
