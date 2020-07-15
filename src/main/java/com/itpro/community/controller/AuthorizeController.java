@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
 @Controller
@@ -38,14 +37,12 @@ public class AuthorizeController {
      * 根据callback传回的信息，实现登录
      * @param code
      * @param state
-     * @param session
      * @param response
      * @return
      */
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name ="state") String state,
-                           HttpSession session,
                            HttpServletResponse response){
         //将信息封装到AccessTokenDTO中
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
