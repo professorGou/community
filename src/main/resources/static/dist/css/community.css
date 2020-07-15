@@ -53,9 +53,29 @@ body{
     display: inline-block;
 }
 .community-menu{
+    margin-right: 10px;
     color: #999;
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 15px;
+}
+.community-tag:hover {
+    background-color: #339dff;
+    color: #fff !important;
+    text-decoration-line: none;
+}
+
+.community-tag {
+    text-decoration-line: none;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    line-height: 16px;
+    padding: 2px 5px;
+    background-color: #99cfff;
+    font-size: 12px;
+    color: #fff !important;
+    border-radius: 4px;
+    margin: 4px;
 }
 .jumbotron{
     margin: 50px;
@@ -90,9 +110,11 @@ body{
     margin-top: 5px;
 }
 .menu .icon{
-    margin-right: 6px;
     font-size: 15px;
     cursor: pointer;
+}
+.likeComment{
+    margin-right: 6px;
 }
 .menu .comment-icon {
     font-size: 15px;
@@ -114,6 +136,14 @@ body{
     background-color: indianred
 }
 .footer{
+    text-align: center;
+    font-size: 12px;
     padding: 10px 25%;
     color: #666;
+}
+.red {
+    color: red !important;
+}
+.nav-tabs > li > a{
+    color: black;
 }

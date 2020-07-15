@@ -19,4 +19,10 @@
     COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER}
     where id = #{id}
     </update>
+  <update id="incLikeCount" parameterType="com.itpro.community.pojo.Comment">
+    update COMMENT
+    set
+    LIKE_COUNT = LIKE_COUNT + #{likeCount,jdbcType=INTEGER}
+    where id = #{id}
+    </update>
 </mapper>

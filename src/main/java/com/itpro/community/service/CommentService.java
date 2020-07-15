@@ -12,4 +12,7 @@ public interface CommentService {
     void insertSelective(Comment comment, User user);
 
     List<CommentDTO> listByTargetId(Integer id, CommentTypeEnum type);
+
+    void incLikeCount(Comment comment);
+
 }

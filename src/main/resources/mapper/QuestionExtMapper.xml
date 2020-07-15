@@ -27,6 +27,13 @@
     where id = #{id}
     </update>
 
+    <update id="incLikeCount" parameterType="com.itpro.community.pojo.Question">
+    update QUESTION
+    set
+    LIKE_COUNT = LIKE_COUNT + #{likeCount,jdbcType=INTEGER}
+    where id = #{id}
+    </update>
+
     <select id="selectRelated" parameterType="com.itpro.community.pojo.Question" resultMap="BaseResultMap">
         select * from QUESTION
         <where>

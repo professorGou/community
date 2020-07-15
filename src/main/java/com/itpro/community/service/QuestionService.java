@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface QuestionService {
 
-    PaginationDTO list(String search, Integer page, Integer size);
+    PaginationDTO list(String search, String tag, String sort, Integer page, Integer size);
 
     PaginationDTO list(Integer id, Integer page, Integer size);
 
@@ -17,6 +17,8 @@ public interface QuestionService {
     void createOrUpdate(Question question);
 
     void incView(Integer id);
+
+    void incLikeCount(Question question);
 
     List<QuestionDTO> selectRelate(QuestionDTO questionDTO);
 }

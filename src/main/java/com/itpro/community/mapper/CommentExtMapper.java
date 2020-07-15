@@ -4,4 +4,6 @@ import com.itpro.community.pojo.Comment;
 
 public interface CommentExtMapper {
     int incCommentCount(Comment comment);
+
+    int incLikeCount(Comment comment);
 }

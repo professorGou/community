@@ -3,6 +3,7 @@ package com.itpro.community.service.impl;
 import com.itpro.community.dto.PaginationDTO;
 import com.itpro.community.dto.QuestionDTO;
 import com.itpro.community.dto.QuestionQueryDTO;
+import com.itpro.community.enums.SortEnum;
 import com.itpro.community.exception.CustomizeErrorCode;
 import com.itpro.community.exception.CustomizeException;
 import com.itpro.community.mapper.QuestionExtMapper;
@@ -42,15 +43,18 @@ public class QuestionServiceImpl implements QuestionService {
      * @return
      */
     @Override
-    public PaginationDTO list(String search, Integer page, Integer size) {
+    public PaginationDTO list(String search, String tag, String sort, Integer page, Integer size) {
         if(StringUtils.isNotBlank(search)){
             //将tags分解成多个单独标签，放入数组中
             String[] tags = StringUtils.split(search, " ");
             //将tags转成正则表达式格式，用于sql语句判断是否符合条件
-            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+            search = Arrays
+                    .stream(tags)
+                    .filter(StringUtils::isNotBlank)
+                    .map(t -> t.replace("+", "").replace("*", "").replace("?", ""))
+                    .filter(StringUtils::isNotBlank)
+                    .collect(Collectors.joining("|"));
         }
-
-
 
         PaginationDTO paginationDTO = new PaginationDTO();
         //获得问题总数
@@ -58,6 +62,19 @@ public class QuestionServiceImpl implements QuestionService {
         //获得问题总数
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         questionQueryDTO.setSearch(search);
+        if (StringUtils.isNotBlank(tag)) {
+            tag = tag.replace("+", "").replace("*", "").replace("?", "");
+            questionQueryDTO.setTag(tag);
+        }
+        //遍历sortEnum
+        for (SortEnum sortEnum : SortEnum.values()) {
+            //若传入的sort属于sortEnum则set
+            if (sortEnum.name().toLowerCase().equals(sort)) {
+                questionQueryDTO.setSort(sort);
+                break;
+            }
+        }
+
         Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
 
         if(totalCount % size == 0)
@@ -73,8 +90,6 @@ public class QuestionServiceImpl implements QuestionService {
         paginationDTO.setPagination(totalPage, page);
         //计算页码起点 例：每页显示5条问题，当前为第1页，则页码起点= 0
         Integer offSet = size * (page - 1);
-        QuestionExample questionExample = new QuestionExample();
-        questionExample.setOrderByClause("gmt_create desc");
         questionQueryDTO.setSize(size);
         questionQueryDTO.setPage(offSet);
         List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
@@ -202,7 +217,17 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     /**
-     *
+     * 点赞问题
+     * @param question
+     */
+    @Override
+    public void incLikeCount(Question question) {
+        question.setLikeCount(1);
+        questionExtMapper.incLikeCount(question);
+    }
+
+    /**
+     * 匹配包含相关标签的问题
      * @param queryDTO
      * @return
      */

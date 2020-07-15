@@ -1,25 +1,412 @@
-2020-07-14 21:13:01.876  INFO 22904 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 22904 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
-2020-07-14 21:13:01.881  INFO 22904 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
-2020-07-14 21:13:02.047  INFO 22904 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-07-14 21:13:02.048  INFO 22904 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-07-14 21:13:04.135  INFO 22904 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
-2020-07-14 21:13:04.148  INFO 22904 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-07-14 21:13:04.148  INFO 22904 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
-2020-07-14 21:13:04.275  INFO 22904 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-07-14 21:13:04.276  INFO 22904 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2228 ms
-2020-07-14 21:13:05.093  INFO 22904 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-07-14 21:13:05.187  INFO 22904 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-07-14 21:13:05.363  INFO 22904 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
-2020-07-14 21:13:05.456  INFO 22904 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-07-14 21:13:06.325  INFO 22904 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-07-14 21:13:06.385  INFO 22904 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
-2020-07-14 21:13:06.492  INFO 22904 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.051s)
-2020-07-14 21:13:06.514  INFO 22904 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
-2020-07-14 21:13:06.518  INFO 22904 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
-2020-07-14 21:13:06.584  INFO 22904 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
-2020-07-14 21:13:06.772  INFO 22904 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-07-14 21:13:06.836  INFO 22904 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
-2020-07-14 21:13:06.856  INFO 22904 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 5.995 seconds (JVM running for 7.469)
-2020-07-14 21:13:10.731  INFO 22904 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-07-14 21:13:10.731  INFO 22904 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-07-14 21:13:10.738  INFO 22904 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-15 11:24:22.751  INFO 29672 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 29672 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 11:24:22.761  INFO 29672 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 11:24:22.922  INFO 29672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 11:24:22.923  INFO 29672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 11:24:25.126  INFO 29672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 11:24:25.143  INFO 29672 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 11:24:25.144  INFO 29672 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 11:24:25.321  INFO 29672 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 11:24:25.321  INFO 29672 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2397 ms
+2020-07-15 11:24:26.385  INFO 29672 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 11:24:26.504  INFO 29672 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 11:24:26.727  INFO 29672 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 11:24:26.738  INFO 29672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 11:24:27.540  INFO 29672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 11:24:27.590  INFO 29672 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 11:24:27.676  INFO 29672 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.043s)
+2020-07-15 11:24:27.693  INFO 29672 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 11:24:27.694  INFO 29672 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 11:24:27.753  INFO 29672 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 11:24:27.975  INFO 29672 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 11:24:28.033  INFO 29672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 11:24:28.045  INFO 29672 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 11:24:28 CST 2020
+2020-07-15 11:24:28.052  INFO 29672 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 6.268 seconds (JVM running for 7.99)
+2020-07-15 11:24:28.130  INFO 29672 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 11:24:28 CST 2020
+2020-07-15 11:24:36.386  INFO 29672 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 11:24:36.387  INFO 29672 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 11:24:36.398  INFO 29672 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-07-15 11:24:38.046  INFO 29672 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 11:24:38 CST 2020
+2020-07-15 11:24:38.050  INFO 29672 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 11:24:38 CST 2020
+2020-07-15 11:24:48.046  INFO 29672 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 11:24:48 CST 2020
+2020-07-15 11:24:48.049  INFO 29672 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 11:24:48 CST 2020
+2020-07-15 11:27:00.739  INFO 36784 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 36784 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 11:27:00.744  INFO 36784 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 11:27:00.882  INFO 36784 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 11:27:00.883  INFO 36784 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 11:27:02.853  INFO 36784 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 11:27:02.866  INFO 36784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 11:27:02.866  INFO 36784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 11:27:02.982  INFO 36784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 11:27:02.982  INFO 36784 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2099 ms
+2020-07-15 11:27:03.725  INFO 36784 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 11:27:03.828  INFO 36784 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 11:27:04.091  INFO 36784 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 11:27:04.099  INFO 36784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 11:27:04.735  INFO 36784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 11:27:04.775  INFO 36784 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 11:27:04.822  INFO 36784 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.025s)
+2020-07-15 11:27:04.834  INFO 36784 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 11:27:04.835  INFO 36784 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 11:27:04.886  INFO 36784 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 11:27:05.044  INFO 36784 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 11:27:05.105  INFO 36784 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 11:27:05.116  INFO 36784 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 11:27:05 CST 2020
+2020-07-15 11:27:05.122  INFO 36784 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 5.272 seconds (JVM running for 6.983)
+2020-07-15 11:27:05.181  INFO 36784 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 11:27:05 CST 2020
+2020-07-15 11:27:13.045  INFO 36784 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 11:27:13.046  INFO 36784 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 11:27:13.052  INFO 36784 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-15 11:43:24.236  INFO 38564 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 38564 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 11:43:24.241  INFO 38564 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 11:43:24.389  INFO 38564 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 11:43:24.390  INFO 38564 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 11:43:26.217  INFO 38564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 11:43:26.228  INFO 38564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 11:43:26.228  INFO 38564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 11:43:26.342  INFO 38564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 11:43:26.342  INFO 38564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1952 ms
+2020-07-15 11:43:27.101  INFO 38564 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 11:43:27.193  INFO 38564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 11:43:27.371  INFO 38564 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 11:43:27.378  INFO 38564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 11:43:28.050  INFO 38564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 11:43:28.091  INFO 38564 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 11:43:28.147  INFO 38564 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.031s)
+2020-07-15 11:43:28.163  INFO 38564 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 11:43:28.164  INFO 38564 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 11:43:28.211  INFO 38564 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 11:43:28.386  INFO 38564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 11:43:28.452  INFO 38564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 11:43:28.464  INFO 38564 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 11:43:28 CST 2020
+2020-07-15 11:43:28.470  INFO 38564 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 4.995 seconds (JVM running for 6.073)
+2020-07-15 11:43:28.541  INFO 38564 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 11:43:28 CST 2020
+2020-07-15 11:43:31.185  INFO 38564 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 11:43:31.186  INFO 38564 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 11:43:31.195  INFO 38564 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-07-15 11:51:11.350  INFO 40520 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 40520 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 11:51:11.354  INFO 40520 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 11:51:11.480  INFO 40520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 11:51:11.480  INFO 40520 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 11:51:13.219  INFO 40520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 11:51:13.229  INFO 40520 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 11:51:13.229  INFO 40520 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 11:51:13.334  INFO 40520 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 11:51:13.334  INFO 40520 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1853 ms
+2020-07-15 11:51:14.082  INFO 40520 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 11:51:14.163  INFO 40520 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 11:51:14.380  INFO 40520 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 11:51:14.387  INFO 40520 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 11:51:14.969  INFO 40520 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 11:51:15.006  INFO 40520 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 11:51:15.050  INFO 40520 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.022s)
+2020-07-15 11:51:15.062  INFO 40520 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 11:51:15.063  INFO 40520 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 11:51:15.119  INFO 40520 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 11:51:15.284  INFO 40520 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 11:51:15.348  INFO 40520 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 11:51:15.359  INFO 40520 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 11:51:15 CST 2020
+2020-07-15 11:51:15.364  INFO 40520 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 4.741 seconds (JVM running for 5.888)
+2020-07-15 11:51:15.427  INFO 40520 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 11:51:15 CST 2020
+2020-07-15 11:51:19.137  INFO 40520 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 11:51:19.137  INFO 40520 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 11:51:19.145  INFO 40520 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-07-15 15:01:25.646  INFO 980 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 980 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 15:01:25.653  INFO 980 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 15:01:25.809  INFO 980 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 15:01:25.809  INFO 980 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 15:01:27.789  INFO 980 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 15:01:27.800  INFO 980 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 15:01:27.801  INFO 980 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 15:01:27.919  INFO 980 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 15:01:27.919  INFO 980 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2109 ms
+2020-07-15 15:01:28.799  INFO 980 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 15:01:28.897  INFO 980 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 15:01:29.083  INFO 980 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 15:01:29.093  INFO 980 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 15:01:29.803  INFO 980 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 15:01:29.846  INFO 980 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 15:01:29.961  INFO 980 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.053s)
+2020-07-15 15:01:29.976  INFO 980 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 15:01:29.977  INFO 980 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 15:01:30.034  INFO 980 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 15:01:30.204  INFO 980 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 15:01:30.256  INFO 980 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 15:01:30.267  INFO 980 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 15:01:30 CST 2020
+2020-07-15 15:01:30.273  INFO 980 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 5.731 seconds (JVM running for 7.167)
+2020-07-15 15:01:30.342  INFO 980 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 15:01:30 CST 2020
+2020-07-15 15:01:33.371  INFO 980 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 15:01:33.372  INFO 980 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 15:01:33.376  INFO 980 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-15 16:33:26.746  INFO 10080 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 10080 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 16:33:26.749  INFO 10080 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 16:33:26.811  INFO 10080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 16:33:26.812  INFO 10080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 16:33:27.989  INFO 10080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 16:33:27.997  INFO 10080 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 16:33:27.998  INFO 10080 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 16:33:28.072  INFO 10080 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 16:33:28.072  INFO 10080 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1260 ms
+2020-07-15 16:33:28.580  INFO 10080 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 16:33:28.639  INFO 10080 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 16:33:28.791  INFO 10080 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 16:33:28.797  INFO 10080 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 16:33:29.215  INFO 10080 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 16:33:29.246  INFO 10080 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 16:33:29.292  INFO 10080 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.021s)
+2020-07-15 16:33:29.301  INFO 10080 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 16:33:29.301  INFO 10080 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 16:33:29.332  INFO 10080 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 16:33:29.431  INFO 10080 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 16:33:29.469  INFO 10080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 16:33:29.478  INFO 10080 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 16:33:29 CST 2020
+2020-07-15 16:33:29.481  INFO 10080 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 3.159 seconds (JVM running for 3.902)
+2020-07-15 16:33:29.527  INFO 10080 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 16:33:29 CST 2020
+2020-07-15 16:33:33.372  INFO 10080 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 16:33:33.372  INFO 10080 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 16:33:33.377  INFO 10080 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-07-15 16:38:19.804  INFO 7184 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 7184 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 16:38:19.806  INFO 7184 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 16:38:19.866  INFO 7184 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 16:38:19.866  INFO 7184 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 16:38:20.954  INFO 7184 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 16:38:20.962  INFO 7184 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 16:38:20.962  INFO 7184 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 16:38:21.035  INFO 7184 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 16:38:21.036  INFO 7184 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1170 ms
+2020-07-15 16:38:21.543  INFO 7184 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 16:38:21.604  INFO 7184 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 16:38:21.713  INFO 7184 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 16:38:21.718  INFO 7184 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 16:38:22.212  INFO 7184 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 16:38:22.238  INFO 7184 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 16:38:22.272  INFO 7184 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.018s)
+2020-07-15 16:38:22.280  INFO 7184 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 16:38:22.281  INFO 7184 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 16:38:22.306  INFO 7184 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 16:38:22.402  INFO 7184 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 16:38:22.439  INFO 7184 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 16:38:22.447  INFO 7184 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 16:38:22 CST 2020
+2020-07-15 16:38:22.450  INFO 7184 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 3.019 seconds (JVM running for 3.66)
+2020-07-15 16:38:22.493  INFO 7184 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 16:38:22 CST 2020
+2020-07-15 16:38:26.090  INFO 7184 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 16:38:26.090  INFO 7184 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 16:38:26.096  INFO 7184 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-15 17:34:52.696  INFO 21788 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 21788 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 17:34:52.699  INFO 21788 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 17:34:52.776  INFO 21788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 17:34:52.776  INFO 21788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 17:34:54.325  INFO 21788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 17:34:54.335  INFO 21788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 17:34:54.336  INFO 21788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 17:34:54.472  INFO 21788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 17:34:54.473  INFO 21788 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1696 ms
+2020-07-15 17:34:55.107  INFO 21788 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 17:34:55.176  INFO 21788 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 17:34:55.305  INFO 21788 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 17:34:55.312  INFO 21788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 17:34:55.850  INFO 21788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 17:34:55.887  INFO 21788 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 17:34:55.931  INFO 21788 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.022s)
+2020-07-15 17:34:55.941  INFO 21788 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 17:34:55.942  INFO 21788 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 17:34:55.978  INFO 21788 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 17:34:56.102  INFO 21788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 17:34:56.152  INFO 21788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 17:34:56.162  INFO 21788 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 17:34:56 CST 2020
+2020-07-15 17:34:56.166  INFO 21788 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 3.856 seconds (JVM running for 4.425)
+2020-07-15 17:34:56.214  INFO 21788 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 17:34:56 CST 2020
+2020-07-15 17:34:59.611  INFO 21788 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 17:34:59.611  INFO 21788 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 17:34:59.615  INFO 21788 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-15 17:35:14.123  WARN 21788 --- [http-nio-5200-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Integer parameter 'id' is not present]
+2020-07-15 17:37:12.275  INFO 26080 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 26080 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 17:37:12.278  INFO 26080 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 17:37:12.337  INFO 26080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 17:37:12.338  INFO 26080 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 17:37:13.394  INFO 26080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 17:37:13.401  INFO 26080 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 17:37:13.402  INFO 26080 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 17:37:13.474  INFO 26080 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 17:37:13.475  INFO 26080 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1137 ms
+2020-07-15 17:37:13.955  INFO 26080 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 17:37:14.014  INFO 26080 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 17:37:14.151  INFO 26080 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 17:37:14.156  INFO 26080 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 17:37:14.531  INFO 26080 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 17:37:14.556  INFO 26080 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 17:37:14.597  INFO 26080 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.014s)
+2020-07-15 17:37:14.605  INFO 26080 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 17:37:14.605  INFO 26080 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 17:37:14.629  INFO 26080 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 17:37:14.720  INFO 26080 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 17:37:14.756  INFO 26080 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 17:37:14.765  INFO 26080 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 17:37:14 CST 2020
+2020-07-15 17:37:14.769  INFO 26080 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 2.847 seconds (JVM running for 3.449)
+2020-07-15 17:37:14.809  INFO 26080 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 17:37:14 CST 2020
+2020-07-15 17:37:23.719  INFO 26080 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 17:37:23.719  INFO 26080 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 17:37:23.723  INFO 26080 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-15 17:37:38.365  WARN 26080 --- [http-nio-5200-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `java.lang.Integer` out of START_OBJECT token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.lang.Integer` out of START_OBJECT token
+ at [Source: (PushbackInputStream); line: 1, column: 1]]
+2020-07-15 17:40:25.449  INFO 27300 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 27300 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 17:40:25.452  INFO 27300 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 17:40:25.551  INFO 27300 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 17:40:25.551  INFO 27300 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 17:40:27.422  INFO 27300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 17:40:27.432  INFO 27300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 17:40:27.432  INFO 27300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 17:40:27.539  INFO 27300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 17:40:27.539  INFO 27300 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1988 ms
+2020-07-15 17:40:28.205  INFO 27300 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 17:40:28.277  INFO 27300 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 17:40:28.408  INFO 27300 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 17:40:28.415  INFO 27300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 17:40:28.944  INFO 27300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 17:40:28.983  INFO 27300 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 17:40:29.021  INFO 27300 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.018s)
+2020-07-15 17:40:29.031  INFO 27300 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 17:40:29.032  INFO 27300 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 17:40:29.070  INFO 27300 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 17:40:29.191  INFO 27300 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 17:40:29.243  INFO 27300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 17:40:29.253  INFO 27300 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 17:40:29 CST 2020
+2020-07-15 17:40:29.257  INFO 27300 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 4.385 seconds (JVM running for 5.067)
+2020-07-15 17:40:29.307  INFO 27300 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 17:40:29 CST 2020
+2020-07-15 17:40:31.838  INFO 27300 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 17:40:31.838  INFO 27300 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 17:40:31.847  INFO 27300 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-07-15 17:50:00.821  INFO 30008 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 30008 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 17:50:00.823  INFO 30008 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 17:50:00.887  INFO 30008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 17:50:00.887  INFO 30008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 17:50:02.023  INFO 30008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 17:50:02.030  INFO 30008 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 17:50:02.030  INFO 30008 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 17:50:02.104  INFO 30008 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 17:50:02.104  INFO 30008 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1217 ms
+2020-07-15 17:50:02.641  INFO 30008 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 17:50:02.706  INFO 30008 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 17:50:02.845  INFO 30008 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 17:50:02.851  INFO 30008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 17:50:03.430  INFO 30008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 17:50:03.463  INFO 30008 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 17:50:03.510  INFO 30008 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.020s)
+2020-07-15 17:50:03.520  INFO 30008 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 17:50:03.521  INFO 30008 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 17:50:03.556  INFO 30008 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 17:50:03.685  INFO 30008 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 17:50:03.729  INFO 30008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 17:50:03.739  INFO 30008 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 17:50:03 CST 2020
+2020-07-15 17:50:03.743  INFO 30008 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 3.299 seconds (JVM running for 3.898)
+2020-07-15 17:50:03.799  INFO 30008 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 17:50:03 CST 2020
+2020-07-15 17:50:07.204  INFO 30008 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 17:50:07.204  INFO 30008 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 17:50:07.211  INFO 30008 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-07-15 17:52:45.161  INFO 21032 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 21032 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 17:52:45.163  INFO 21032 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 17:52:45.225  INFO 21032 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 17:52:45.225  INFO 21032 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 17:52:46.316  INFO 21032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 17:52:46.323  INFO 21032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 17:52:46.323  INFO 21032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 17:52:46.395  INFO 21032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 17:52:46.396  INFO 21032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1171 ms
+2020-07-15 17:52:46.969  INFO 21032 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 17:52:47.041  INFO 21032 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 17:52:47.179  INFO 21032 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 17:52:47.236  INFO 21032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 17:52:47.797  INFO 21032 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 17:52:47.839  INFO 21032 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 17:52:47.882  INFO 21032 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.022s)
+2020-07-15 17:52:47.892  INFO 21032 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 17:52:47.893  INFO 21032 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 17:52:47.933  INFO 21032 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 17:52:48.072  INFO 21032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 17:52:48.123  INFO 21032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 17:52:48.133  INFO 21032 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 17:52:48 CST 2020
+2020-07-15 17:52:48.137  INFO 21032 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 3.354 seconds (JVM running for 3.97)
+2020-07-15 17:52:48.190  INFO 21032 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 17:52:48 CST 2020
+2020-07-15 17:52:52.104  INFO 21032 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 17:52:52.104  INFO 21032 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 17:52:52.111  INFO 21032 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-07-15 18:00:41.813  INFO 30800 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 30800 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 18:00:41.815  INFO 30800 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 18:00:41.875  INFO 30800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 18:00:41.876  INFO 30800 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 18:00:43.127  INFO 30800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 18:00:43.137  INFO 30800 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 18:00:43.138  INFO 30800 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 18:00:43.244  INFO 30800 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 18:00:43.245  INFO 30800 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1369 ms
+2020-07-15 18:00:44.008  INFO 30800 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 18:00:44.106  INFO 30800 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 18:00:44.288  INFO 30800 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 18:00:44.299  INFO 30800 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 18:00:44.968  INFO 30800 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 18:00:45.005  INFO 30800 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 18:00:45.051  INFO 30800 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.025s)
+2020-07-15 18:00:45.062  INFO 30800 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 18:00:45.063  INFO 30800 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 18:00:45.099  INFO 30800 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 18:00:45.233  INFO 30800 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 18:00:45.286  INFO 30800 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 18:00:45.297  INFO 30800 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 18:00:45 CST 2020
+2020-07-15 18:00:45.301  INFO 30800 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 3.862 seconds (JVM running for 4.509)
+2020-07-15 18:00:45.358  INFO 30800 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 18:00:45 CST 2020
+2020-07-15 18:00:48.141  INFO 30800 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 18:00:48.141  INFO 30800 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 18:00:48.148  INFO 30800 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-07-15 18:11:20.140  INFO 28464 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 28464 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 18:11:20.144  INFO 28464 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 18:11:20.237  INFO 28464 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 18:11:20.237  INFO 28464 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 18:11:21.922  INFO 28464 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 18:11:21.932  INFO 28464 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 18:11:21.932  INFO 28464 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 18:11:22.039  INFO 28464 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 18:11:22.039  INFO 28464 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1801 ms
+2020-07-15 18:11:22.703  INFO 28464 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 18:11:22.785  INFO 28464 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 18:11:22.978  INFO 28464 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 18:11:22.985  INFO 28464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 18:11:23.543  INFO 28464 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 18:11:23.577  INFO 28464 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 18:11:23.614  INFO 28464 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.018s)
+2020-07-15 18:11:23.624  INFO 28464 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 18:11:23.625  INFO 28464 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 18:11:23.665  INFO 28464 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 18:11:23.799  INFO 28464 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 18:11:23.859  INFO 28464 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 18:11:23.870  INFO 28464 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 18:11:23 CST 2020
+2020-07-15 18:11:23.875  INFO 28464 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 4.289 seconds (JVM running for 5.129)
+2020-07-15 18:11:23.931  INFO 28464 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 18:11:23 CST 2020
+2020-07-15 18:11:26.972  INFO 28464 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 18:11:26.973  INFO 28464 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 18:11:26.977  INFO 28464 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-07-15 18:18:06.908  INFO 34172 --- [restartedMain] c.itpro.community.CommunityApplication   : Starting CommunityApplication on DESKTOP-GU7QC7Q with PID 34172 (D:\studying\Idea WorkSpace\community\target\classes started by HP in D:\studying\Idea WorkSpace\community)
+2020-07-15 18:18:06.912  INFO 34172 --- [restartedMain] c.itpro.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2020-07-15 18:18:07.028  INFO 34172 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-15 18:18:07.029  INFO 34172 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-15 18:18:09.136  INFO 34172 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5200 (http)
+2020-07-15 18:18:09.149  INFO 34172 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-15 18:18:09.150  INFO 34172 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-15 18:18:09.289  INFO 34172 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-15 18:18:09.289  INFO 34172 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2260 ms
+2020-07-15 18:18:10.254  INFO 34172 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-15 18:18:10.359  INFO 34172 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-15 18:18:10.554  INFO 34172 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 6.0.8 by Redgate
+2020-07-15 18:18:10.562  INFO 34172 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-15 18:18:11.241  INFO 34172 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-15 18:18:11.287  INFO 34172 --- [restartedMain] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://localhost:3306/community (MySQL 8.0)
+2020-07-15 18:18:11.328  INFO 34172 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.022s)
+2020-07-15 18:18:11.339  INFO 34172 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `community`: 4
+2020-07-15 18:18:11.340  INFO 34172 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Schema `community` is up to date. No migration necessary.
+2020-07-15 18:18:11.391  INFO 34172 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-07-15 18:18:11.542  INFO 34172 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-15 18:18:11.603  INFO 34172 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5200 (http) with context path ''
+2020-07-15 18:18:11.614  INFO 34172 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule start Wed Jul 15 18:18:11 CST 2020
+2020-07-15 18:18:11.619  INFO 34172 --- [restartedMain] c.itpro.community.CommunityApplication   : Started CommunityApplication in 5.333 seconds (JVM running for 6.077)
+2020-07-15 18:18:11.676  INFO 34172 --- [scheduling-1] c.itpro.community.schedule.HotTagTasks   : hotTagSchedule stop Wed Jul 15 18:18:11 CST 2020
+2020-07-15 18:18:15.056  INFO 34172 --- [http-nio-5200-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-15 18:18:15.056  INFO 34172 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-15 18:18:15.060  INFO 34172 --- [http-nio-5200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms

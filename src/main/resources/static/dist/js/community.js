@@ -115,3 +115,45 @@ function selectTag(value) {
         }
     }
 }
+
+/**
+ * 点赞评论
+ * @param data
+ */
+function likeComment(data) {
+    let id = data.getAttribute("data-id");
+
+    $.post({
+        url: "/likeComment",
+        data: JSON.stringify({"id":id}),
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.code == 200) {
+                window.location.reload();
+                $("#likeComment").css("pointer-events", "none");
+            }
+        }
+    });
+}
+
+/**
+ * 点赞问题
+ * @param data
+ */
+function likeQuestion(data) {
+    let id = data.getAttribute("data-id");
+
+    $.post({
+        url: "/likeQuestion",
+        data: JSON.stringify({"id":id}),
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (data) {
+            if (data.code == 200) {
+                window.location.reload();
+                $("#likeQuestion").css("pointer-events", "none");
+            }
+        }
+    });
+}

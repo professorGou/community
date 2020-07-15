@@ -91,6 +91,16 @@ public class CommentServiceImpl implements CommentService {
     }
 
     /**
+     * 增加点赞数
+     * @param comment 对应评论
+     */
+    @Override
+    public void incLikeCount(Comment comment) {
+        comment.setLikeCount(1L);
+        commentExtMapper.incLikeCount(comment);
+    }
+
+    /**
      * 创建通知(将此方法单独抽出————用于发生回复/评论时创建通知)
      * @param comment           评论
      * @param receiver          通知接收者(相当于回复的问题/评论对应的问题创建者)
